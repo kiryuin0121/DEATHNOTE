@@ -1,0 +1,3 @@
+・tsconfig.json設定
+・prisma初期設定
+・package.jsonスクリプト作成
