@@ -1,3 +1,5 @@
 ・tsconfig.json設定
-・prisma初期設定
+・prisma初期化&初期設定
+・express API作成
 ・package.jsonスクリプト作成
+・frontend 連携

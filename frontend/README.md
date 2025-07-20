@@ -53,11 +53,10 @@ css/
 └── third.css           # サードページ用スタイル
 ```
 
-### 静的ファイル
+### 画像ファイル
 
 ```
-public/
-└── images/             # 画像・アイコン類を格納
+images/             # 画像・アイコン類を格納
 ```
 
 ### React に関するソースコード
@@ -97,8 +96,9 @@ frontend/
 │   ├── second.css
 │   └── third.css
 │
-├── public/
-│   └── images/
+├── images/
+│
+
 │
 ├── src/
 │   ├── pages/
