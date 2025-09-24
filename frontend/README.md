@@ -1,119 +1,51 @@
-# 3 校合同学内コンテスト(映画情報サイト)
+# 課題 07 映画サイト frontend
 
-## プロジェクトの実行・閲覧手順
+## ディレクトリ構成
 
-1. zip ファイルを解凍し、プロジェクトの frontend ディレクトリに移動してください。
+frontend/                         # Viteで作成
+├─ index.html                     # トップページ
+├─ about.html                     # 詳細ページ
+├─ special.html                   # 特設ページ
+├─ news.html                      # ニュースページ
+├─ css/
+│   ├─ global.css                 # 共通スタイル
+│   └─ XXX.css                    # ページ固有スタイル（XXX = htmlファイル名）
+├─ public/
+│   └─ images/
+│       ├─ global/                # 共通の画像素材
+│       └─ XXX/                   # ページ固有の画像素材
+├─ typescript/
+│   ├─ global.ts                  # 共通スクリプト
+│   └─ XXX.ts                     # ページ固有スクリプト
+├─ src/
+│   ├─ tailwind.css               # Tailwindの読み込み・カスタムクラス定義
+│   ├─ components/                # 共通UIコンポーネント
+│   ├─ pages/
+│   │   ├─ top/
+│   │   │   ├─ components/        # topページ専用コンポーネント
+│   │   │   └─ main.tsx           # index.htmlのエントリーポイント
+│   │   └─ XXX/
+│   │       ├─ components/        # XXXページ専用コンポーネント
+│   │       └─ main.tsx           # XXX.htmlのエントリーポイント
+│   └─ types/                     # TypeScriptの型定義
+└─ package.json
 
-2. ターミナルを開き、以下のコマンドを入力して依存関係をインストールしてください：
 
-   ```bash
-   npm install
-   ```
+## 使用技術
 
-3. 続けて以下のコマンドを入力してローカルサーバーを起動してください：
+- axios                       ExpressサーバーにGETリクエストを送信
 
-   ```bash
-   npm run dev
-   ```
+- date-fns　　　　　　　　　　　Dateオブジェクトを適当な文字列に整形
 
-   または
+- motion                      アニメーションを実装
 
-   ```bash
-   npx vite
-   ```
+- react                       uiを実装
 
-4. ターミナルに表示される URL（`http://localhost:5173`）をブラウザで開いてください。
+- react-icons                 アイコンライブラリ
 
-5. 各ページへのアクセス方法：
-   - トップページ: `http://localhost:5173/`
-   - セカンドページ: `http://localhost:5173/second.html`
-   - サードページ: `http://localhost:5173/kira.html`
+- react-markdown,react-gfm    マークダウン形式の文字列を解釈して画面描画
 
-## プロジェクト概要
+- swiper                      スライダーを実装
 
-- HTML/CSS に関するコードはプロジェクトのルートディレクトリに、React に関するコードは src ディレクトリ配下に配置しています。
+- tailwindcss                 スタイリング
 
-- 動的・複雑な UI は React で作成し、HTML ファイル内の以下の形式のコメント部分に挿入されます：
-
-```html
-<!-- ⚛️ XXX ⚛️ -->
-<div id="XXX"></div>
-```
-
-※ XXX は React エントリーポイントで指定したコンポーネント ID に対応
-
-## プロジェクト構成
-
-### 各 HTML ファイルで読み込んでいる CSS ファイル
-
-```
-css/
-├── style.css           # トップページ用スタイル
-├── second.css          # セカンドページ用スタイル
-└── kira.css           # サードページ用スタイル
-```
-
-### 画像ファイル
-
-```
-images/             # 画像・アイコン類を格納
-```
-
-### React に関するソースコード
-
-```
-src/
-├── pages/              # ページ別コンポーネント
-│   ├── home/           # ホームページ関連
-│   │   ├── main.tsx    # ⚛️ React エントリーポイント
-│   │   └── components/ # ホーム固有コンポーネント
-│   │
-│   ├── second/         # セカンドページ関連
-│   │   ├── main.tsx    # ⚛️ React エントリーポイント
-│   │   └── components/ # セカンド固有コンポーネント
-│   │
-│   └── kira/          # サードページ関連
-│       ├── main.tsx    # ⚛️ React エントリーポイント
-│       └── components/ # サード固有コンポーネント
-│
-└── tailwind.css        # TailwindCSS本体の読み込み&独自クラス定義
-```
-
-### HTML エントリーポイント
-
-```
-├── index.html          # ⭐ トップページ (/)
-├── second.html         # セカンドページ (/second)
-└── kira.html          # サードページ (/kira)
-```
-
-## 全体構成
-
-```
-frontend/
-├── css/
-│   ├── style.css
-│   ├── second.css
-│   └── kira.css
-│
-├── images/
-│
-│
-│
-├── src/
-│   ├── pages/
-│   │   ├── home/
-│   │   │   ├── main.tsx
-│   │   │   └── components/
-│   │   ├── second/
-│   │   │   ├── main.tsx
-│   │   │   └── components/
-│   │   └── kira/
-│   │       ├── main.tsx
-│   │       └── components/
-│   └── tailwind.css
-│
-├── index.html
-├── second.html
-└── kira.html
-```

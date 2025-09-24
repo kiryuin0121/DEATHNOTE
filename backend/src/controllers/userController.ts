@@ -1,1 +1,0 @@
-// get,create,update,delete

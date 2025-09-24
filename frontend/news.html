@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DEATH NOTE/NEWS</title>
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="DEATH NOTE デスノート" />
+    <meta
+      property="og:description"
+      content="映画「DEATH NOTE デスノート」/「DEATH NOTE デスノート the last name」の非公式サイトです。"
+    />
+    <meta property="og:url" content="http://localhost:5173/" />
+    <meta
+      property="og:image"
+      content="http://localhost:5173/global/logo1.jpg"
+    />
+    <!-- X -->
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Icon -->
+    <link rel="icon" href="/favicon.ico" id="favicon" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/apple-touch-icon-180x180.png"
+    />
+    <!-- Google fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Zen+Kurenaido&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- font owesome -->
+    <script
+      src="https://kit.fontawesome.com/3eb97939da.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/global.css" />
+    <link rel="stylesheet" href="/css/news.css" />
+  </head>
+  <body>
+    <!-- ===ローディング画面=== -->
+    <!--⚛️loading(src/pages/global/components/Loading.tsx)⚛️ -->
+    <div id="loading"></div>
+    <!-- ===ニュース記事=== -->
+    <main>
+      <!--⚛️React:Navigation(src/components/Navigation.tsx)⚛️ -->
+      <nav id="navigation"></nav>
+      <section class="news-section">
+        <h1 class="page-title">NEWS</h1>
+
+        <!--⚛️news(src/pages/news/components/News.tsx)⚛️ -->
+        <div id="news"></div>
+      </section>
+    </main>
+
+    <!--⚛️React:news.htmlにおけるReactエンドポイント⚛️ -->
+    <script type="module" src="/src/pages/news/main.tsx"></script>
+  </body>
+</html>

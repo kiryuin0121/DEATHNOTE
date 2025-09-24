@@ -1,0 +1,26 @@
+{
+  "name": "oh_it11b506_20",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run setup && npm run dev",
+    "setup": "concurrently \"npm install --prefix backend\" \"npm install --prefix frontend\"",
+    "dev": "concurrently \"npm run dev --prefix backend\" \"npm run dev --prefix frontend\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kiryuin0121/3-1-.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/kiryuin0121/3-1-/issues"
+  },
+  "homepage": "https://github.com/kiryuin0121/3-1-#readme",
+  "devDependencies": {
+    "concurrently": "^9.2.0"
+  }
+}

@@ -10,8 +10,9 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: path.resolve(__dirname, "index.html"),
-        second: path.resolve(__dirname, "second.html"),
-        kira: path.resolve(__dirname, "kira.html"),
+        news: path.resolve(__dirname, "news.html"),
+        special: path.resolve(__dirname, "special.html"),
+        about: path.resolve(__dirname, "about.html"),
       },
     },
   },

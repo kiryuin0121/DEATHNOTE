@@ -1,0 +1,12 @@
+@charset "utf-8";
+
+body {
+  background-image: url(/images/global/bg.jpg);
+}
+
+main {
+  width: 90vw;
+  min-height: 100vh;
+  margin-inline: auto;
+  padding-block: 5vh;
+}

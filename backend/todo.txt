@@ -1,3 +1,0 @@
-1:schema.prisma モデル定義
-2:seed.ts シードデータ投入
-3:各リソースごとにroutes/controllersを記述

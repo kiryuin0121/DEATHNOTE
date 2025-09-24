@@ -1,0 +1,175 @@
+@charset "utf-8";
+
+@font-face {
+  font-family: "Death Note";
+  src: url("/fonts/DeathNote.woff2") format("woff2"),
+    url("/fonts/DeathNote.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "DEATHNOTE Font";
+  src: url("/fonts/DeathNote2.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  background: oklch(14.5% 0 0);
+  color: oklch(97% 0 0);
+  overflow-x: hidden;
+  font-family: "NotoSefif JP", serif;
+}
+/*⚛️オープニング(src/pages/top/componnts/Opening.tsx)、ローディング(src/components/Loading.tsx)中は背面の要素を見えない状態にしておく。⚛️ */
+body:not(.loaded) main {
+  visibility: hidden;
+  opacity: 0;
+}
+body.loaded main {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.page-title {
+  font-family: "Death Note", "Rock Salt", cursive;
+  font-size: 2.5rem;
+  text-align: center;
+  letter-spacing: 0.3rem;
+  padding-block: 0.5rem;
+  position: relative;
+  margin-bottom: 7.5vh;
+  font-weight: 400;
+  line-height: calc(1.75 / 1.25);
+  /* text-silver */
+  background: linear-gradient(
+    45deg,
+    #757575 0%,
+    #9e9e9e 45%,
+    #e8e8e8 70%,
+    #9e9e9e 85%,
+    #757575 90% 100%
+  );
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* line */
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: white;
+    transform: scaleY(0.2);
+    transform-origin: center;
+  }
+
+  &::before {
+    top: 0;
+  }
+
+  &::after {
+    bottom: 0;
+  }
+}
+
+.section-title {
+  font-family: "Death Note", serif;
+  text-align: center;
+  line-height: 1em;
+  letter-spacing: 0.4rem;
+  /* text-silver */
+  background: linear-gradient(
+    45deg,
+    #757575 0%,
+    #9e9e9e 45%,
+    #e8e8e8 70%,
+    #9e9e9e 85%,
+    #757575 90% 100%
+  );
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+footer {
+  position: relative;
+  overflow: hidden;
+  /* height: 60vh; */
+  width: 100vw;
+  padding-block: 2rem;
+  background: white;
+  color: #0d0d0d;
+  display: grid;
+  row-gap: 2rem;
+  justify-content: center;
+  transition: filter 400ms ease-in-out;
+  .footer-bg {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 60vh;
+    z-index: 0;
+    /* img {
+      height: 100%;
+    } */
+  }
+  .footer-content {
+    /* background: deepskyblue; */
+    width: 100vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    /* height: 60vh; */
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* row-gap: 2rem; */
+    /* padding-block: 5vh; */
+  }
+  .logo-img {
+    /* width: 25vw; */
+    margin-inline: auto;
+  }
+  .share-on-sns {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* column-gap: 2rem; */
+  }
+  .copy-right {
+    text-align: center;
+    font-weight: 300;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #757575;
+  }
+}
+
+.animate-fade p {
+  opacity: 0;
+  filter: blur(6px);
+  transform: translateX(var(--fade-dir, 0));
+  transition: all 1s ease;
+  transition-delay: 100ms;
+}
+
+.animate-fade p.active {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0);
+}
+
+.animate-fade.left {
+  --fade-dir: -4px;
+}
+
+.animate-fade.right p {
+  --fade-dir: 4px;
+}

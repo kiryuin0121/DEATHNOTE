@@ -1,21 +1,329 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
+  <head prefix="og: http://ogp.me/ns#">
     <meta charset="UTF-8" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
-    <link rel="stylesheet" href="css/destyle.css" />
-    <link rel="stylesheet" href="css/style.css" />
+    <title>DEATH NOTE デスノート</title>
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="DEATH NOTE デスノート" />
+    <meta
+      property="og:description"
+      content="映画「DEATH NOTE デスノート」/「DEATH NOTE デスノート the last name」の非公式サイトです。"
+    />
+    <meta property="og:url" content="http://localhost:5173/" />
+    <meta
+      property="og:image"
+      content="http://localhost:5173/global/logo1.jpg"
+    />
+    <!-- X -->
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Icon -->
+    <link rel="icon" href="/favicon.ico" id="favicon" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/apple-touch-icon-180x180.png"
+    />
+    <!-- Google fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Zen+Kurenaido&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- font owesome -->
+    <script
+      src="https://kit.fontawesome.com/3eb97939da.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/global.css" />
+    <link rel="stylesheet" href="/css/index.css" />
   </head>
   <body>
-    <h1 class="text-xl font-bold">Home</h1>
-    <nav class="text-sm text-neutral-500">
-      <a href="/second">Second</a>
-      <a href="/killer">killer</a>
-    </nav>
-    <div id="component1"></div>
-    <div id="component2"></div>
-    <script type="module" src="/src/pages/home/main.tsx"></script>
+    <!-- ===オープニングアニメーション=== -->
+    <!--⚛️React:Opening(src/pages/top/components/Opening.tsx)⚛️ -->
+    <div id="opening"></div>
+
+    <!-- ===ナビゲーションメニュー=== -->
+    <!--⚛️React:Navigation(src/components/Navigation.tsx)⚛️ -->
+    <header id="navigation"></header>
+
+    <main>
+      <!-- ===メインビジュアル=== -->
+      <section id="top">
+        <figure class="visual">
+          <img
+            src="/images/top/visual.jpg"
+            alt="映画DEATHNOTEメインビジュアル"
+          />
+          <!--💻TODO:ださい。きにいらない。💻 -->
+          <h1 class="logo">
+            <img src="/images/top/logo.png" alt="DEATHNOTEのロゴ" />
+          </h1>
+
+          <p class="catchPhrase-horizonal">
+            <span>デ</span>
+            <span>ス</span>
+            <span>ノ</span>
+            <span>ー</span>
+            <span>ト</span>
+            <span>に</span>
+            <span>名</span>
+            <span>前</span>
+            <span>を</span>
+            <span>書</span>
+            <span>か</span>
+            <span>れ</span>
+            <span>た</span>
+            <span>人</span>
+            <span>間</span>
+            <span>は</span>
+            <span>死</span>
+            <span>ぬ</span>
+            <span>。</span>
+          </p>
+
+          <p class="catchPhrase-vertical">頭脳戦を制する者が、新世界を制す。</p>
+        </figure>
+        <!-- キャッチコピー -->
+        <div class="catchCopy animate-fadeup">
+          <!-- 横棒 -->
+          <div class="h-px w-[10vw] bg-deathWhite"></div>
+          <p>
+            原作累計3,000万部・映画興行収入80億円突破の超大作。<br />
+            世界を震撼させた究極の頭脳戦サスペンス
+          </p>
+          <!-- 横棒 -->
+          <div class="h-px w-[10vw] bg-deathWhite"></div>
+        </div>
+        <!-- クレジット -->
+        <section class="animate-fadeup credit space-y-2">
+          <!-- 主演 -->
+          <ul class="hero gap-x-2 font-bold">
+            <li class="fujiwara">藤原竜也</li>
+            <li>×</li>
+            <li>松山ケンイチ</li>
+          </ul>
+
+          <!-- メインキャスト -->
+          <ul class="main font-bold">
+            <li>戸田恵梨香</li>
+            <li>香椎由宇</li>
+            <li>細川茂樹</li>
+            <li>瀬戸朝香</li>
+            <li>片瀬那奈</li>
+          </ul>
+
+          <!-- 脇役 -->
+          <ul class="sub">
+            <li>青山草太</li>
+            <li>中村育二</li>
+            <li>奥田達士</li>
+            <li>清水伸</li>
+            <li>小松みゆき</li>
+            <li>津川雅彦</li>
+            <li>五大路子</li>
+            <li>満島ひかり</li>
+            <div class="basis-full mb-2"></div>
+            <li>マギー</li>
+            <li>上原さくら</li>
+            <li>中原丈雄</li>
+            <li>田中要次</li>
+            <li>顔田顔彦</li>
+            <li>皆川猿時</li>
+            <li>前田愛</li>
+            <li>板尾創路</li>
+          </ul>
+
+          <!-- その他主要キャスト -->
+          <ul class="guest font-bold">
+            <li>中村獅童</li>
+            <li>藤村俊二</li>
+            <li>加賀武夫</li>
+            <li>池畑慎之介</li>
+          </ul>
+
+          <!-- スタッフ -->
+          <ul class="sub font-bold">
+            <li>監督：金子俊介</li>
+            <li>原作：大場つぐみ・小畑健</li>
+            <li>脚本：大石哲也</li>
+            <li>音楽：川井憲次</li>
+          </ul>
+
+          <!-- アーティスト -->
+          <ul class="sub">
+            <li>主題歌：RED HOT CHILI PEPPERS「Dani California」「Snow」</li>
+            <li>挿入歌：スガ シカオ「真夏の夜のユメ」</li>
+          </ul>
+        </section>
+      </section>
+
+      <!-- ===宣伝&最新情報=== -->
+      <!--⚛️React:Information(src/pages/top/components/Inforation.tsx)⚛️ -->
+      <section id="information"></section>
+
+      <!-- ===映画の概要=== -->
+      <section id="introduction">
+        <h2 class="section-title py-4 border-y border-deathDarkGray">
+          INTRODUCTION
+        </h2>
+        <div class="content-wrapper grid grid-cols-5">
+          <!-- 画像1 -->
+          <figure class="image-content col-span-2">
+            <img src="/images/top/introduction.jpg" alt="夜神月" />
+            <p>一人の天才がそれを手にしてしまった。</p>
+          </figure>
+          <!-- テキスト -->
+          <section
+            class="text-content min-h-[80vh] lg:min-h-[90vh] w-[90vw] lg:w-[54vw] lg:col-span-3 px-0 lg:px-8 py-4 gap-y-4 lg:gap-y-8"
+          >
+            <p class="phrase-01 text-base lg:text-2xl w-[90vw] lg:w-auto">
+              <span class="text-outlined">退屈な</span>
+              <span class="text-luminescence">死神</span>
+              <span class="text-outlined">が人間界に</span>
+              <span class="text-luminescence">ノート</span>
+              <span class="text-outlined">を</span>
+              <span class="text-luminescence">落</span>
+              <span class="text-outlined">とし、</span>
+              <br />
+              <span class="text-outlined">退屈な</span>
+              <span class="text-luminescence">天才</span>
+              <span class="text-outlined">が</span>
+              <span class="text-luminescence">ノート</span>
+              <span class="text-outlined">を</span>
+              <span class="text-luminescence">拾</span>
+              <span class="text-outlined">った。</span>
+            </p>
+            <p class="phrase-02">
+              <img
+                src="/images/top/rule.png"
+                alt="The human whose name written in this note shall die"
+                class="scale-110"
+              />
+              <span class="jp"> "このノートに名前を書かれた人間は死ぬ" </span>
+            </p>
+            <div
+              class="main-text animate-fade text-sm lg:text-base w-[80vw] lg:w-auto mx-auto lg:mx-0"
+            >
+              <p>「DEATH NOTE」――それは、人の死を決定づける 「死のノート」。</p>
+              <p>
+                死神リュークが地上に落とした「デスノート」を偶然拾ったのは、強い正義感と天才的頭脳を併せ持つエリート大学生・夜神月（やがみライト／藤原竜也）。
+              </p>
+              <p>
+                ノートの力を知った月は、自らの手で悪を裁き、犯罪のない理想の世界を創り上げることを決意する。
+              </p>
+              <p>
+                そして月の裁きにより、世界中の犯罪者が次々と謎の死を遂げるなか、彼は人々から救世主〈キラ〉と呼ばれる存在となっていく。
+              </p>
+              <p>
+                しかし、その前に立ちはだかるのは
+                一連の事件の真相を解明すべく捜査に乗り出した
+                世界的名探偵L（エル／松山ケンイチ）。
+              </p>
+              <p>
+                息詰まる頭脳戦の中で繰り広げられる、月の悪魔的な知略と、神をも思わせる大胆な行動。
+                そして、原作超えとの呼び声高い衝撃のラストが観る者を待ち受ける。
+              </p>
+              <p>
+                キラは正義か、それとも独善に満ちた大量殺人者か――。<br />
+                一冊のノートが導く、新世界の行方を見逃すな！
+              </p>
+            </div>
+            <button class="text-[12px] lg:text-base px-2 lg:px-4 py-1 lg:py-2">
+              <a href="/about">About the Movie →</a>
+            </button>
+          </section>
+        </div>
+      </section>
+
+      <!-- ===予告映像=== -->
+      <section id="movie">
+        <h2 class="section-title py-4 border-y border-deathDarkGray">MOVIE</h2>
+        <!--⚛️React:Trailer(src/pages/top/components/Trailer.tsx)⚛️ -->
+        <div id="trailer"></div>
+      </section>
+    </main>
+    <!--⚛️React:Slider01(src/pages/top/components/Slider01.tsx)⚛️ -->
+    <div id="slider-01" class="lg:mb-16"></div>
+
+    <!-- ===コピーライト、SNS連携=== -->
+    <footer class="h-[30vh] lg:h-[60vh] py-4 lg:py-8">
+      <div class="footer-bg">
+        <img
+          src="/images/global/bg2.png"
+          alt="ryuke"
+          class="h-[30vh] lg:h-[60vh] w-[80vw]"
+        />
+      </div>
+      <div class="footer-content h-[30vh] lg:h-[60vh] gap-y-4 lg:gap-y-8">
+        <figure>
+          <img
+            class="logo-img w-[45vw] lg:w-[25vw]"
+            src="/images/global/black-logo.png"
+            alt="DeathNoteロゴ"
+          />
+        </figure>
+        <ul class="share-on-sns gap-x-4 lg:gap-x-12">
+          <!-- tiktok -->
+          <li>
+            <a
+              href="https://tiktok.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i
+                class="fa-brands fa-tiktok fa-lg lg:scale-175 transition-colors duration-300 hover:text-red-800"
+              ></i>
+            </a>
+          </li>
+          <!-- x -->
+          <li>
+            <a
+              href="https://x.com/intent/post?text=映画「デスノート」は神作品だからみんなも見たほうがいい。%0A&hashtags=DEATHNOTE,デスノート,theLastName"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i
+                class="fa-brands fa-square-x-twitter fa-lg lg:scale-175 transition-colors duration-300 hover:text-red-800"
+              ></i>
+            </a>
+          </li>
+          <!-- instagram -->
+          <li>
+            <a
+              href="https://www.instagram.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i
+                class="fa-brands fa-square-instagram fa-lg lg:scale-175 transition-colors duration-300 hover:text-red-800"
+              ></i>
+            </a>
+          </li>
+        </ul>
+        <ul class="copy-right text-[8px] lg:text-xs gap-x-4 lg:gap-x-8">
+          <li>©大場つぐみ・小畑健</li>
+          <li>©2006 「DEATH NOTE」FIRM PARTNERS</li>
+          <li>©2025 ohs50348</li>
+        </ul>
+      </div>
+    </footer>
+
+    <!-- TypeScript -->
+    <script src="/typescript/global.ts"></script>
+    <script src="/typescript/index.ts"></script>
+    <!--⚛️React:index.htmlにおけるReactのエントリーポイント⚛️ -->
+    <script type="module" src="/src/pages/top/main.tsx"></script>
   </body>
 </html>

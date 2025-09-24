@@ -6,3 +6,113 @@ datasource db {
   provider = "sqlite"
   url      = env("DATABASE_URL")
 }
+
+// ===News===
+model News {
+  id        String   @id @default(uuid())
+  title     String
+  content   String
+  createdAt DateTime @default(now())
+}
+
+// ===Special===
+model Special {
+  id        String         @id @default(uuid())
+  title     String
+  thumbnail String
+  content   String
+  images    SpecialImage[]
+  createdAt DateTime       @default(now())
+}
+
+model SpecialImage {
+  id        String  @id @default(uuid())
+  url       String
+  specialId String
+  special   Special @relation(fields: [specialId], references: [id], onDelete: Cascade)
+}
+
+// ===Trailer===
+model Trailer {
+  id        String   @id @default(uuid())
+  title     String
+  url       String
+  thumbnail String?
+  createdAt DateTime @default(now())
+}
+
+// ===CharacterCast===
+//登場人物+演者
+model Person {
+  id          String     @id @default(uuid())
+  size        Size //大きさ(縦の長さと横の長さ)
+  top         Int //y座標
+  left        Int //x座標
+  serial      Int //通し番号
+  character   Character? @relation(fields: [characterId], references: [id], onDelete: Cascade)
+  characterId String     @unique
+
+  cast   Cast?  @relation(fields: [castId], references: [id], onDelete: Cascade)
+  castId String @unique
+}
+
+enum Size {
+  hero
+  main
+  sub
+}
+
+model Character {
+  id          String           @id @default(uuid())
+  name        String
+  url         String
+  description String
+  person      Person?
+  images      CharacterImage[]
+}
+
+model CharacterImage {
+  id          String    @id @default(uuid())
+  url         String
+  characterId String
+  character   Character @relation(fields: [characterId], references: [id], onDelete: Cascade)
+}
+
+model Cast {
+  id      String  @id @default(uuid())
+  name    String
+  profile String?
+  comment String?
+  person  Person?
+}
+
+// ===Song===
+model Artist {
+  id      String  @id @default(uuid())
+  name    String
+  imgUrl  String
+  profile String
+  comment String?
+  song    Song[]
+}
+
+model Song {
+  id         String   @id @default(uuid())
+  title      String
+  imgUrl     String
+  audioUrl   String
+  album      String?
+  artistId   String
+  artist     Artist   @relation(fields: [artistId], references: [id], onDelete: Cascade)
+  lyrics     Lyric[]
+  releasedAt Int
+  createdAt  DateTime @default(now())
+}
+
+model Lyric {
+  id     Int    @id @default(autoincrement())
+  phrase String
+  time   Float
+  songId String
+  song   Song   @relation(fields: [songId], references: [id], onDelete: Cascade)
+}
