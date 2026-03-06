@@ -41,3 +41,4 @@
 
 - DB モデルに関する記述は、`backend/prisma/shcema.prisma`で行っています。
 # Three-school-joint-intramural-contest
+# DeathNote
