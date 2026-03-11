@@ -11,3 +11,7 @@
 ![img09](screenshot/img09_blur.png)
 ![img10](screenshot/img10.png)
 ![img11](screenshot/img11.png)
+
+※本リポジトリは学習目的の制作物です。
+スクリーンショット内の画像は著作権保護のため加工しています。
+画像・作品の権利は各権利者に帰属します。
